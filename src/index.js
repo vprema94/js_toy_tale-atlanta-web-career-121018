@@ -11,12 +11,12 @@ function setupPage() {
 } 
 
 function addFormHandler() {
-  addBtn.addEventListener('click', () => {
+  addBtn.addEventListener('click', () => { 
+    toyForm.addEventListener('submit', newToy)
     // hide & seek with the form
     addToy = !addToy
     if (addToy) {
       toyForm.style.display = 'block'
-      toyForm.addEventListener('submit', newToy)
     } else {
       toyForm.style.display = 'none'
     }
@@ -28,6 +28,7 @@ function newToy (event) {
   let name = event.target.name.value
   let image = event.target.image.value
   createToy(name, image,).then(renderToy)
+  event.target.reset()
 }  
 
 function createToy(name, image, likes) {
@@ -47,7 +48,7 @@ function createToy(name, image, likes) {
 } 
 
 function renderAllToys() { 
-  toyContainer.innerHTML = "" 
+  toyContainer.textContent = "" 
   getToy().then(function (data) {
       data.forEach(renderToy)
   })
@@ -56,6 +57,7 @@ function renderAllToys() {
 function getToy() { 
   let url = `http://localhost:3000/toys`;
   return fetch(url).then(res => res.json())
+  // .catch((error)=> console.log(error)) //can be used to debug
 }  
 
 function renderToy(toy) {
@@ -90,10 +92,10 @@ function toyView(toy) {
 
 function addLike() {
   // debugger
-  let likes = parseInt(event.target.parentElement.children[2].innerHTML)
+  let likes = parseInt(event.target.parentElement.querySelector('p').textContent)
   let id = event.target.parentElement.dataset.id
   likes++ 
-  event.target.parentElement.children[2].innerHTML = likes + " Likes"
+  event.target.parentElement.querySelector('p').textContent = likes + " Likes"
   updateToy(likes, id)
 } 
 

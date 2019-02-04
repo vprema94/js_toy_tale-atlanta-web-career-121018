@@ -71,6 +71,12 @@
       "image": "https://www.sanrio.com/media/W1siZiIsIjIwMTYvMDYvMTMvMjEvMDUvMDYvMjAwL0tSX29oLmdpZiJdXQ/KR_oh.gif?sha=3e14f3fb8bd762c5",
       "likes": 0,
       "id": 12
+    },
+    {
+      "name": "Sarah",
+      "image": "https://vignette.wikia.nocookie.net/thesanrio/images/a/a4/Pekkle.png/revision/latest?cb=20111202182059",
+      "likes": 0,
+      "id": 13
     }
   ]
 }
