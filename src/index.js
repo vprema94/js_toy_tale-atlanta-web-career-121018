@@ -28,7 +28,7 @@ function newToy (event) {
   let name = event.target.name.value
   let image = event.target.image.value
   createToy(name, image,).then(renderToy)
-  event.target.reset()
+  event.target.reset() // clears form
 }  
 
 function createToy(name, image, likes) {
