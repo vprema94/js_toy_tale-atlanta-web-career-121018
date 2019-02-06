@@ -100,7 +100,7 @@ function addLike() {
 } 
 
 function updateToy(newlikes, id) {
-  return fetch(`http://localhost:3000/toys/:${id}`,{
+  return fetch(`http://localhost:3000/toys/${id}`,{
     method: 'PATCH',
     headers: 
     {
